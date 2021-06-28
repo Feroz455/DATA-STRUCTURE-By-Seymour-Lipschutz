@@ -1,0 +1,21 @@
+/*
+Program 
+
+*/
+#include<iostream>
+using namespace std;
+
+
+
+//main begin
+int main()
+{
+    getchar();
+    return 0;
+}
+//main end
+///Program end
+
+/*
+output
+*/
