@@ -1,4 +1,4 @@
-# DATA-STRUCTURE-sos-By-Seymour-Lipschutz
+# DATA-STRUCTURE-By-Seymour-Lipschutz
 ## Chapter ONE
 ## INTRODUCTION and OVERVIEW
 ` 
