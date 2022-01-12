@@ -1,5 +1,5 @@
 # DATA-STRUCTURE-By-Seymour-Lipschutz
-#1. INTRODUCTION AND OVERVIEW
+## 1. INTRODUCTION AND OVERVIEW
 
 1.1 Introduction
 
@@ -13,7 +13,7 @@
 
 Solved Problems
 
-#2. PRELIMINARIES
+## 2. PRELIMINARIES
 
 2.1 Introduction
 
@@ -37,7 +37,7 @@ Supplementary Problems
 
 Programming Problems
 
-#3. STRING PROCESSING
+## 3. STRING PROCESSING
 
 3.1 Introduction
 
@@ -59,7 +59,7 @@ Supplementary Problems
 
 Programming Problems
 
-#4. ARRAYS, RECORDS AND POINTERS
+## 4. ARRAYS, RECORDS AND POINTERS
 
 4.1 Introduction
 
@@ -95,7 +95,7 @@ Supplementary Problems
 
 Programming Problems
 
-#5. LINKED LISTS
+## 5. LINKED LISTS
 
 5.1 Introduction
 
