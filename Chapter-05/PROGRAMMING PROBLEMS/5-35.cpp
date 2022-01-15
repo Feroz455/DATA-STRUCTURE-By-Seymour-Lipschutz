@@ -120,8 +120,11 @@ int main()
 
 /*
 OUTPUT
-CLIENT
+/*
+Enter lowyer name
 Davis
+Enter clint NAME and AGE
+TO STOP TYPE $$$$$      
 
 
 Hall
@@ -140,7 +143,12 @@ Ginn
 38
 $$$$$
 
+HELLO
+Enter lowyer name
+
 Levine
+Enter clint NAME and AGE
+TO STOP TYPE $$$$$
 
 Pride
 42
@@ -162,7 +170,12 @@ Newman
 46
 $$$$$
 
-Nelson 
+HELLO
+Enter lowyer name
+
+Nelson
+Enter clint NAME and AGE
+TO STOP TYPE $$$$$
 
 Harris
 42
@@ -183,8 +196,13 @@ Cohen
 36
 $$$$$
 
+HELLO
+Enter lowyer name
+
 
 Rogers
+Enter clint NAME and AGE
+TO STOP TYPE $$$$$
 Fisher
 32
 
@@ -200,4 +218,41 @@ Singer
 Lewis
 28
 $$$$$
+
+HELLO
+LOWYER NAME = Davis
+      Hall  35
+      Moss  28
+      Ford  47
+     Brown  54
+      Ginn  38
+LOWYER NAME = Levine
+     Pride  42
+      Berk  38
+     White  45
+      Todd  25
+     Dixon  32
+    Newman  46
+LOWYER NAME = Nelson
+    Harris  42
+   Jackson  52
+   Roberts  40
+     Eisen  32
+     Adams  48
+     Cohen  36
+LOWYER NAME = Rogers
+    Fisher  32
+    Graves  42
+    Parker  50
+    Singer  45
+     Lewis  28
+Enter Lowyer number
+4
+
+LOWYER NAME = Rogers
+    Fisher  32
+    Graves  42
+    Parker  50
+    Singer  45
+     Lewis  28
 */
