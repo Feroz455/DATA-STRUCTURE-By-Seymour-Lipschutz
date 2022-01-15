@@ -4,9 +4,9 @@ Programming Problems 5.1 to 5.6 refer to the data structure in
 Fig. 5.52, which consists of four alphabetized lists of clients
 and their respective lawyers.
 
-5.4 Write a program which reads the NAME of a client and prints 
-the client’s name, age and lawyer. Test the program using 
-(a) Newman, (b) Ford, (c) Rivers and (d) Hall.
+5.5 Write a program which reads the NAME of the client and deletes 
+the client’s record from the structure. Test the program using 
+(a) Lewis, (b) Klein and (c) Parker.
 */
 #include <iostream>
 #include <string>
