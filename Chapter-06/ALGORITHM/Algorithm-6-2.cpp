@@ -18,49 +18,96 @@ If TOP = 0, then: Print: UNDERFLOW, and Return.
 #include<iostream>
 #include<iomanip>
 using namespace std;
-typedef struct _link
+class STACK
 {
-    int DATA;
-    _link *next;
-}STACK;
-void PUSH(STACK **TOP, int DATA)
-{
-    if(*TOP == NULL)
+private:
+ typedef struct _node
     {
-        STACK *PTR = new STACK;
-        PTR->DATA = DATA;
-        PTR->next = NULL;
-        (*TOP) = PTR;
-        return;
-    }
-    STACK *PTR = new STACK;
-    PTR->DATA = DATA;
-    PTR->next = (*TOP);
-    (*TOP) = PTR;
-}
-int POP(STACK **TOP)
+        int DATA;
+        _node *next;
+    }STK;
+    int MAXSTK;
+    int AVAIL;
+    STK *START;
+   
+public:
+    STACK(int N);
+    ~STACK();
+    void PUSH(int DATA);
+    int POP();
+    void DISPLAY();
+};
+STACK::STACK(int N)
 {
-    if(*TOP == NULL)
+    MAXSTK = 0;
+    AVAIL = N;
+    START = nullptr;
+}
+//INSERT DATA INTO THE STACK
+void STACK::PUSH(int DATA)
+{
+    
+    if(START == nullptr)
+    {
+        STK *PTR = new STK;
+        PTR->DATA = DATA;
+        PTR->next = nullptr;
+        START = PTR;
+        MAXSTK++;
+        AVAIL--;
+    }
+    if(AVAIL <= 0)
+    {
+        cout << "OVERFLOW\n";
+    }
+    else
+    {
+         STK *PTR = new STK;
+        PTR->DATA = DATA;
+        PTR->next = START;
+        START = PTR;
+        MAXSTK++;
+        AVAIL--;
+    }
+}
+//POPPING DATA FROM STACK
+int STACK::POP()
+{
+    if(START== nullptr)
     {
         cout << "UNDER FLOW\n";
         return 0;
     }
-    int temp = (*TOP)->DATA;
-    (*TOP) = (*TOP)->next;
+    int temp = START->DATA;
+    START = START->next;
+    AVAIL++;
+    MAXSTK--;
     return temp;
+}
+void STACK::DISPLAY()
+{
+    int ITEM = POP();
+    while(ITEM)
+    {
+        cout << ITEM<< " ";
+        ITEM = POP();
+    }
+    
+
+}
+STACK::~STACK()
+{
 }
 int main()
 {
-    STACK *TOP = NULL;
-    for(int i = 1; i <= 10; i++)
+    STACK S(10);
+    for(int  i  = 1 ; i < 7; i++)
     {
-        PUSH(&TOP,i);
-    }
-    int temp = POP(&TOP);
-    while(temp)
-    {
-        cout << temp << "  ";
-        temp = POP(&TOP);
-    }
-
+        S.PUSH(i);
+    };
+    S.DISPLAY();
 }
+/*
+OUTPUT
+6 5 4 3 2 1 1 UNDER FLOW
+*/
