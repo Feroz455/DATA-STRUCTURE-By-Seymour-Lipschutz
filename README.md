@@ -108,3 +108,136 @@ Programming Problems
 5.5 Searching a Linked List
 
 5.6 Memory Allocation; Garbage Collection
+## 6. STACKS, QUEUES, RECURSION
+
+6.1 Introduction
+
+6.2 Stacks
+
+6.3 Array Representation of Stacks
+
+6.4 Linked Representation of Stacks
+
+6.5 Arithmetic Expressions; Polish Notation
+
+6.6 Quicksort, an Application of Stacks
+
+6.7 Recursion
+
+6.8 Towers of Hanoi
+
+6.9 Implementation of Recursive Procedures by Stacks
+
+6.10 Queues
+
+6.11 Linked Representation of Queues
+
+6.12 Deques
+
+6.13 Priority Queues
+
+Solved Problems
+
+Supplementary Problems
+
+Programming Problems
+
+## 7. TREES
+
+7.1 Introduction
+
+7.2 Binary Trees
+
+7.3 Representing Binary Trees in Memory
+
+7.4 Traversing Binary Trees
+
+7.5 Traversal Algorithms using Stacks
+
+7.6 Header Nodes; Threads
+
+7.7 Binary Search Trees
+
+7.8 Searching and Inserting in Binary Search Trees
+
+7.9 Deleting in a Binary Search Tree
+
+7.10 AVL Search Trees
+
+7.11 Insertion in an AVL Search Tree
+
+7.12 Deletion in an AVL Search Tree
+
+7.13 m-way Search Trees
+
+7.14 Searching, Insertion and Deletion in an m-way Search Tree
+
+7.15 B Trees
+
+7.16 Searching, Insertion and Deletion in a B-tree
+
+7.17 Heap; Heapsort
+
+7.18 Path Lengths; Huffman’s Algorithm
+
+7.19 General Trees
+
+Solved Problems
+
+Supplementary Problems
+
+Programming Problems
+
+## 8. GRAPHS AND THEIR APPLICATIONS
+
+8.1 Introduction
+
+8.2 Graph Theory Terminology
+
+8.3 Sequential Representation of Graphs; Adjacency Matrix; Path Matrix
+
+8.4 Warshall’s Algorithm; Shortest Paths
+
+8.5 Linked Representation of a Graph
+
+8.6 Operations on Graphs
+
+8.7 Traversing a Graph
+
+8.8 Posets; Topological Sorting
+
+8.9 Spanning Tree
+
+Solved Problems
+
+Supplementary Problems
+
+Programming Problems
+
+## 9. SORTING AND SEARCHING
+
+9.1 Introduction
+
+9.2 Sorting
+
+9.3 Insertion Sort
+
+9.4 Selection Sort
+
+9.5 Merging
+
+9.6 Merge-Sort
+
+9.7 Radix Sort
+
+9.8 Searching and Data Modification
+
+9.9 Hashing
+
+Supplementary Problems
+
+Appendix
+
+Index
+
+ 
