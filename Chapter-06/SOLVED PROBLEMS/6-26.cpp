@@ -17,113 +17,121 @@ contains only two elements, AAA and TTT, then the front element in row 2, BBB,
 must also be deleted. This finally leaves the structure in Fig. 6.36(b).
 
 Remark: Observe that, in both cases, FRONT and REAR are changed accordingly.
+*//*
+page 209
+6.28 Consider the priority queue in Fig. 6.30, which is maintained by a 
+two-dimensional array QUEUE. (a) Describe the structure after (RRR, 3), 
+(SSS, 4), (TTT, 1), (UUU, 4) and (VVV, 2) are added to the queue. 
+(b) Describe the structure if, after the preceding insertions, three elements are deleted.
+
+(a) Insert each element in its priority row. That is, add RRR as the rear 
+element in row 3, add SSS as the rear element in row 4, add TTT as the rear 
+element in row 1, add UUU as the rear element in row 4 and add VVV as the 
+rear element in row 2. This yields the structure in Fig. 6.36(a). (As noted 
+previously, insertions with this array representation are usually simpler 
+than insertions with the one-way list representation.)
+
+(b) First delete the elements with the highest priority in row 1. Since row 1 
+contains only two elements, AAA and TTT, then the front element in row 2, BBB, 
+must also be deleted. This finally leaves the structure in Fig. 6.36(b).
+
+Remark: Observe that, in both cases, FRONT and REAR are changed accordingly.
 */
 #include<iostream>
-#include<iomanip>
+#include<ctime>
 #include<string>
 using namespace std;
-typedef struct _pQueue
+template<typename T>
+void INSPQA(T A[][6],int FRONT[], int REAR[], T ITEM, int M)
 {
-    string ITEM;
-    int PRIORITY;
-    _pQueue *next;
-}P_QUEUE;
-
-void INSERT_FIRST(P_QUEUE **START, string ITEM, int PARIORITY)
-{
-    P_QUEUE *PTR = new P_QUEUE;
-    PTR->ITEM = ITEM;
-    PTR->PRIORITY = PARIORITY;
-    PTR->next = (*START);
-    (*START) = PTR;
-}
-void INSERT(P_QUEUE **START, string ITEM, int PARIORITY)
-{
-    if((*START) == NULL)
+    M = M -1 ;
+    if(FRONT[M] == 0 && REAR[M] == 5)
     {
-        INSERT_FIRST(START, ITEM, PARIORITY);
+        cout << "OVERFLOW\n";
         return;
+    }
+    if(FRONT[M] == -1)
+    {
+        FRONT[M] = 0;
+        REAR[M] = 0;
     }
     else
+    if(REAR[M] == 5)
     {
-        P_QUEUE *PTR = (*START);
-        P_QUEUE *PREV, *TEMP = new P_QUEUE;
-        TEMP->ITEM = ITEM;
-        TEMP->PRIORITY = PARIORITY;
-        while(PTR->next != NULL && PTR->PRIORITY <= PARIORITY)
-        {
-            PREV = PTR;
-            PTR = PTR->next;
-        }
-        if(PTR->next == NULL)
-        {
-            TEMP->next = NULL;
-            PTR->next = TEMP;
-        }
-        else if(PTR == (*START))
-        {
-            TEMP->next = PTR;
-            (*START) = TEMP;
-        }
-        else 
-        {
-            TEMP->next = PTR;
-            PREV->next = TEMP;
-        }
-
+        REAR = 0;
     }
+    else
+    REAR[M] = REAR[M] + 1;
+    A[M][REAR[M]] = ITEM;
+    return;
 }
-
-int DELETE(P_QUEUE **START,string ITEM, int &PARIORITY)
+template<typename T>
+int DELPQA(T A[][6],int FRONT[], int REAR[], T &ITEM, int X)
 {
-    if((*START) == NULL)
+    int i = 0;
+    while((FRONT[i]==-1) && (i < X))
     {
-        cout << "UNDER FLOW\n";
-        return 0;
+        if((i == X-1) && FRONT[i] == -1)
+        {
+            cout << "UNDERFLOW\n";
+            return 0;
+        }
+
+        i = i + 1;
     }
-    P_QUEUE *PTR = (*START);
-    ITEM = (*START)->ITEM;
-    PARIORITY = (*START)->PRIORITY;
-    (*START) = (*START)->next;
-    delete PTR;
+    ITEM = A[i][FRONT[i]];
+    if(FRONT[i] == REAR[i])
+    {
+        FRONT[i] = -1;
+        REAR[i] = -1;
+    }
+    else 
+    if(FRONT[i] == 5)
+    {
+        FRONT[i] = 0;
+    }
+    else 
+    FRONT[i] = FRONT[i]+1;
     return 1;
-}
-void DISPLAY(P_QUEUE *START)
-{
-    P_QUEUE *PTR = START;
-    if((START) == NULL)
-    {
-        return;
-    }
-    while(PTR->next != NULL)
-    {
-        cout << PTR->ITEM << "_" << PTR->PRIORITY << " -> ";
-        PTR = PTR->next;
-    }
-    cout << PTR->ITEM << "_" << PTR->PRIORITY  << endl;
-    cout << "\n";
 }
 int main()
 {
-    P_QUEUE *START = NULL;
-    string ITEM;
-    int PARIORITY;
+    srand(time(0));
+    int x = 5, y = 6, FRONT[x], REAR[x],M;
+    string PQUE[x][6], ITEM;
+    for(int i = 0 ; i < x; i++)
+    {
+        FRONT[i] = -1;
+        REAR[i] = -1;
+    } 
+    cout << "ENTER ITEM NAME AND PARITY\n";
+    for(int i = 0; i < 11; i++)
+    {
+        cin >> ITEM;
+        cin >> M;
+        INSPQA<string>(PQUE, FRONT, REAR, ITEM, M);
+    }
+    for(int i = 0; i < 11; i++)
+    {
+        if( DELPQA<string>(PQUE, FRONT, REAR, ITEM, x))
+        cout << ITEM << " ";
+    }
+    cout << endl;
 
-    ITEM = "AAA" , PARIORITY = 1;
-    INSERT(&START, ITEM, PARIORITY);
-    ITEM = "TTT" , PARIORITY = 1;
-    INSERT(&START, ITEM, PARIORITY);
-    ITEM = "BBB" , PARIORITY = 2;
-    INSERT(&START, ITEM, PARIORITY);
-    ITEM = "CCC" , PARIORITY = 2;
-    INSERT(&START, ITEM, PARIORITY);
-    ITEM = "XXX" , PARIORITY = 2;
-    INSERT(&START, ITEM, PARIORITY);
-    ITEM = "VVV" , PARIORITY = 2;
-    INSERT(&START, ITEM, PARIORITY);
-    DISPLAY(START);
+    
 }
 /*
-output
-AAA_1 -> TTT_1 -> BBB_2 -> CCC_2 -> XXX_2 -> VVV_2
+ENTER ITEM NAME AND PARITY
+BBB 2
+XXX 2
+DDD 4
+EEE 4
+AAA 1
+CCC 2
+YYY 3
+GGG 5
+FFF 4
+ZZZ 2
+WWW 1
+JJJ 3
 */
