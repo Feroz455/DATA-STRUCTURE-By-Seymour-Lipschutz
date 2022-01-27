@@ -138,8 +138,11 @@ int main()
     {
         h.insertKey(rand()%100);
     }
-    cout << h.extractMin() << " ";
-    cout << h.getMin() << " ";
-    h.decreaseKey(2, 1);
-    cout << h.getMin();
+    for(int i = 0; i < 11; i++)
+    {
+       cout << h.extractMin() << " ";
+    }
 }
+/*
+0 5 24 34 41 58 62 64 67 69 78 
+*/
