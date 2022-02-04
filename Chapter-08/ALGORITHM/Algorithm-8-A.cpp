@@ -1,5 +1,24 @@
 /*
+page 94
+Algorithm A : This algorithm executes a breadth-first search on a
+graph G beginning at a starting node A.
 
+1. Initialize all nodes to the ready state (STATUS = 1).
+
+2. Put the starting node A in QUEUE and change its status to the
+waiting state (STATUS = 2).
+
+3. Repeat Steps 4 and 5 until QUEUE is empty:
+
+4.     Remove the front node N of QUEUE. Process N and change the
+status of N to the processed state (STATUS = 3).
+
+5.    Add to the rear of QUEUE all the neighbors of N that are in
+the steady state (STATUS = 1), and change their status to the waiting state (STATUS = 2).
+
+[End of Step 3 loop.]
+
+6. Exit.
 */
 #include <iostream>
 #include <list>
@@ -93,19 +112,6 @@ int main()
     Breath_First_print(A, X, n - 65);
     Breath_First_Search(A, X, n - 65, m - 65);
 }
-/*
-Enter Nodes and EDGE
-5 14
-0 1
-0 2
-0 3
-1 3
-2 3
-1 4
-3 4
-Size 5
-2 -> 0 -> 3 -> 1
-
 /*
 Enter Nodes and EDGE
 9
